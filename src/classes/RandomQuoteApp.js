@@ -22,21 +22,20 @@ class RandomQuotesApp {
     if (newQuote instanceof Quote) this.currentQuote = newQuote;
     this.displayCurrentQuote();
   }
-
-  getRandomQuote() {
+  randomQuoteHandler() {
     this.changeCurrenQuote(RandomQuote.getRandomQuote());
   }
 
-  async getRandomQuoteViaAPI() {
+  async randomQuoteViaAPIHandler() {
     this.changeCurrenQuote(await RandomQuote.getRandomQuoteViaAPI());
   }
 
   init() {
     this.randomQuoteBtn.addEventListener("click", () => {
-      this.getRandomQuote();
+      this.randomQuoteHandler();
     });
     this.randomQuoteAPIBtn.addEventListener("click", () => {
-      this.getRandomQuoteViaAPI();
+      this.randomQuoteViaAPIHandler();
     });
   }
 }
