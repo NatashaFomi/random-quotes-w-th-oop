@@ -9,13 +9,17 @@ class RandomQuote {
     return new Quote(id, text, author);
   }
 
-  static getRandomQuoteViaAPI() {
+  static async getRandomQuoteViaAPI() {
     const url = "https://dummyjson.com/quotes/random";
+    const options = { headers: { "Content-Type": "application/json" } };
 
-    return fetch(url, { headers: { "Content-Type": "application/json" } })
-      .then((response) => response.json())
-      .then(({ id, quote: text, author }) => new Quote(id, text, author))
-      .catch((error) => console.error(error));
+    try {
+      const response = await fetch(url, options);
+      const { id, quote: text, author } = await response.json();
+      return new Quote(id, text, author);
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 
