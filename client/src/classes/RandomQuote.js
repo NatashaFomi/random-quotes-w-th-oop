@@ -1,14 +1,7 @@
 import quotes from "../data/quotes.js";
 import MathUtils from "../utils/MathUtils.js";
 import Quote from "./Quote.js";
-
-let config;
-
-try {
-  config = await import("../../config.prod.js");
-} catch (error) {
-  config = await import("../../config.js");
-}
+import config from "../../config.js";
 
 class RandomQuote {
   static getRandomQuote() {
