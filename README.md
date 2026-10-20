@@ -41,6 +41,7 @@ Welcome to the Random Quotes App! This project consists of a client-side Vanilla
 
 1. There is no need to build the client as it already contains HTML, CSS and JS files
 1. In the client/stc/config.js replace http://localhost:3000 with URL assigned to the server API in the step 7. in the previous section. For example https://random-quotes-api.com
+   Note: You could make this change directly on the hosting server or in the project sourse files (less preferrable)
 1. Host all client files from the `client` subfolder on the public web server
    `npx live-server client`
 1. Get assigned by the hosting provider URL for your client frontend application. For example https://random-quotes-frontend.com
